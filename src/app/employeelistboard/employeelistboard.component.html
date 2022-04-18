@@ -1,0 +1,71 @@
+
+<br>
+<br>
+
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: rgb(122, 7, 63);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" class="p-3 mb-2  text-white text-decoration-none">Employee Management System</a>
+    </div>
+</nav>
+
+<div class="container mt-2">
+
+    <div class="py-2 d-flex justify-content-between">
+
+        <p class="lead text-light fw-bold my-4" style="background-color: #2b6fd6;" > &nbsp; Employees List &nbsp;</p>
+        <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+               Request to Edit
+              </button>
+        </div>
+    
+    </div>
+    <div *ngIf="employeeListLoadingFlag" class="text-center">Loading...</div>
+
+    <div class="mt-4">
+
+        <table datatable *ngIf="!employeeListLoadingFlag" class="table table-hover">
+            <thead class=" text-light" style="background-color: rgb(122, 7, 63);">
+                <tr>
+                    <th><small class="text-light">ID</small></th>
+                    <th><small class="text-light">NAME</small></th>
+                    <th><small class="text-light">emailId</small></th>
+                    <th><small class="text-light">domain</small></th>
+                    <th><small class="text-light">contactNo</small></th>
+                    <th><small class="text-light">experience</small></th>
+                    <th><small class="text-light">SALARY</small></th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of employeeList">
+                    <td class="p-3">{{e.employeeId}}</td>
+                    <td class="p-3">{{e.employeeName}}</td>
+                    <td class="p-3">{{e.emailId}}</td>
+                    <td class="p-3">{{e.domain}}</td>
+                    <td class="p-3">{{e.contactNo}}</td>
+                    <td class="p-3">{{e.experience}}</td>
+                    <td class="p-3">{{e.salary}}</td>
+                   
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary" id="exampleModalLabel">Edit Request to Admin</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+        </div>
+        <div class="modal-body">
+            <P class="text-success">  Request Sent Successfully!</P> 
+        </div>
+      
+      </div>
+    </div>
+  </div>

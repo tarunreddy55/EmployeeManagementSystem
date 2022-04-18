@@ -1,0 +1,38 @@
+<div class="text-center">
+
+    <main class="form-signin ">
+     
+      <div class="setwidth mx-auto">
+  
+        <form [formGroup]="adminLoginform" (submit)="onSubmit(adminLoginform)">
+         <br>
+          <div class="form-floating mb-3" style="margin-left: 41%;">
+            
+            <input type="text" class=" form-control" name="username" style="width: 30%;"  formControlName="username" id="floatingInput" placeholder="name@email.com">
+            <label for="floatingInput">Username</label>
+            <div *ngIf="adminLoginform.get('username')?.touched"> 
+              <span class="text-danger" *ngIf="adminLoginform.get('username')?.hasError('required')"><small>Username required.</small></span>
+              <span class="text-danger" *ngIf="adminLoginform.get('username')?.hasError('minLength')"><small>Username is at least 3 characters long.</small></span>
+          </div> 
+          </div>
+          <div class="form-floating mb-3" style="margin-left: 41%;"> 
+            <input type="password" class="form-control" name="passsword" style="width: 30%;" formControlName="password" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+            <div *ngIf="adminLoginform.get('password')?.touched"> 
+              <span class="text-danger" *ngIf="adminLoginform.get('password')?.hasError('required')"><small>Password is required.</small></span>
+              <span class="text-danger" *ngIf="adminLoginform.get('password')?.hasError('minLength')"><small>Password is at least of 6 characters.</small></span>
+          </div> 
+          </div>
+          
+          <p *ngIf="invalid" class="text-danger my-2">Invalid Credentials</p>
+        
+        <button class="w-20 btn btn-lg btn-primary"  [disabled]="!adminLoginform.valid " type="submit">
+          <div >
+            Sign in
+          </div>
+         
+        </button>
+      </form>
+      </div>
+    </main>
+      </div>

@@ -1,0 +1,208 @@
+
+<br>
+<br>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(122, 7, 63);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" class="p-3 mb-2  text-white text-decoration-none" >Employee Management System</a>
+    </div>
+</nav>
+
+<div class="container mt-2">
+
+    <div class="py-2 d-flex justify-content-between">
+
+        <p class="lead text-light fw-bold my-4" style="background-color: #2b6fd6;" >&nbsp; Employees List  &nbsp;</p>
+        <!-- Button trigger modal -->
+        <div class="d-flex align-items-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="setCreateForm()">
+             <i class="fas fa-plus"></i>   Add New Employee
+            </button>
+        </div>
+    </div>
+    <div *ngIf="employeeListLoadingFlag" class="text-center">Loading...</div>
+
+    <div class="mt-4">
+
+        <table datatable *ngIf="!employeeListLoadingFlag" class="table table-hover">
+            <thead class="text-light" style="background-color: rgb(122, 7, 63);">
+                <tr>
+                    <th><small class="text-light">ID</small></th>
+                    <th><small class="text-light">NAME</small></th>
+                    <th><small class="text-light">emailId</small></th>
+                    <th><small class="text-light">domain</small></th>
+                    <th><small class="text-light">contactNo</small></th>
+                    <th><small class="text-light">experience</small></th>
+                    <th><small class="text-light">SALARY</small></th>
+                    <th><small class="text-light">ACTION</small></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of employeeList">
+                    <td class="p-3">{{e.employeeId}}</td>
+                    <td class="p-3">{{e.employeeName}}</td>
+                    <td class="p-3">{{e.emailId}}</td>
+                    <td class="p-3">{{e.domain}}</td>
+                    <td class="p-3">{{e.contactNo}}</td>
+                    <td class="p-3">{{e.experience}}</td>
+                    <td class="p-3">{{e.salary}}</td>
+                    <td class="">
+                        <button class="btn" (click)="setUpdateForm(e)" data-bs-toggle="modal" data-bs-target="#exampleModal" > 
+                          <i class="bi bi-pencil-fill"></i>
+                        </button>
+
+                        <button class="btn" (click)="onDeleteEmp(e.employeeId, e.employeeName)" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                          <i class="bi bi-trash icon-red"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{formObject.value.formType | titlecase}} Employee</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="formObject" (submit)="onSubmit(formObject)">
+
+                <input type="hidden" name="id" formControlName="id" [value]="formObject.value.id">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                  <input type="text" name="name" formControlName="name" class="form-control" [value]="formObject.value.employeeName" id="name">
+                  <div *ngIf="formObject.get('employeeName')?.touched"> 
+                    <span class="text-danger" *ngIf="formObject.get('employeeName')?.hasError('required')"><small>This field is required.</small></span>
+                    <span class="text-danger" *ngIf="formObject.get('employeeId')?.hasError('required')"><small>This field is id.</small></span>
+                  </div>  
+                </div>
+
+                <div class="mb-3">
+                    <label for="emailId" class="form-label">emailId</label>
+                    <input type="text" class="form-control" id="emailId" name="emailId" formControlName="emailId" [value]="formObject.value.emailId">
+                    <div *ngIf="formObject.get('emailId')?.touched"> 
+                      <span class="text-danger" *ngIf="formObject.get('emailId')?.hasError('required')"><small>This field is required.</small></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="domain" class="form-label">Domain</label>
+                   
+                    <select class="form-select" id="domain" name="domain" formControlName="domain" >
+                      <option [selected]="formObject.value.domain == 'Java'" value="Java">Java</option>
+                      <option [selected]="formObject.value.domain == '.net'" value=".net">.net</option>
+                      <option [selected]="formObject.value.domain == 'Data Science'" value="Data Science">Data Science</option>
+                      <option [selected]="formObject.value.domain == 'AI'" value="AI">AI</option>
+                      <option [selected]="formObject.value.domain == 'Python'" value="python">Python</option>
+                      <option [selected]="formObject.value.domain == 'Node js'" value="Node js">Node js</option>
+                      <option [selected]="formObject.value.domain == 'ML'" value="ML">ML</option>
+
+                  </select>
+                    <div *ngIf="formObject.get('domain')?.touched"> 
+                      <span class="text-danger" *ngIf="formObject.get('domain')?.hasError('required')"><small>This field is required.</small></span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="contactNo" class="form-label">contactNo Number</label>
+                    <input type="text" class="form-control" id="contactNo" name="contactNo" formControlName="contactNo" [value]="formObject.value.contactNo">
+                    <div *ngIf="formObject.get('contactNo')?.touched"> 
+                        <span class="text-danger" *ngIf="formObject.get('contactNo')?.hasError('required')"><small>This field is required.</small></span>
+                        <span class="text-danger" *ngIf="formObject.get('contactNo')?.hasError('minLength')"><small>Phone number should be of 10 digits.</small></span>
+                        <span class="text-danger" *ngIf="formObject.get('contactNo')?.hasError('maxLength')"><small>Phone number should be of 10 digits.</small></span>
+                       
+                      </div> 
+                </div>
+                
+                <div class="mb-3">
+                    <label for="experience" class="form-label">experience</label>
+                    <input type="text" class="form-control" id="experience"  name="experience" formControlName="experience" [value]="formObject.value.experience">
+                    <div *ngIf="formObject.get('experience')?.touched"> 
+                        <span class="text-danger" *ngIf="formObject.get('experience')?.hasError('required')"><small>This field is required.</small></span>
+                    </div> 
+                </div>
+                
+                <div class="mb-3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input type="text" class="form-control" id="salary"  name="salary" formControlName="salary" [value]="formObject.value.salary">
+                    <div *ngIf="formObject.get('salary')?.touched"> 
+                        <span class="text-danger" *ngIf="formObject.get('salary')?.hasError('required')"><small>This field is required.</small></span>
+                        <span class="text-danger" *ngIf="formObject.get('salary')?.hasError('min')"><small>Salary can't be negative.</small></span>
+                      </div> 
+                </div>
+                
+                <div class="modal-footer border-top-0">
+                    <button type="button" id="modalCloseBtn" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                   
+                    <button  type="submit" class="btn btn-primary" (click)="onsave()"  data-bs-toggle="modal" data-bs-target="#saveModal" [disabled]="!formObject.valid">
+                      Save changes
+                    </button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: red;">
+          <h5 class=" modal-title text-white" id="exampleModalLabel" >Delete Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p class="text-warning " style="font-size: 150%;"><strong>Are you sure  to delete "{{deleteuser}}" ?</strong>  </p>
+            <p class="m-0">Id No- <strong>{{deleteuserid}}</strong></p>
+          
+
+            <div class="form-check my-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" [checked]="deleteconfirmation" (click)="toggleDeleteConfirmation()">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Confirm Delete
+                </label>
+              </div>
+
+            <div class="modal-footer mt-3">
+                <button type="button" id="deleteModalbtn" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" (click)="deleteEmployee(deleteuserid)" data-bs-toggle="modal" data-bs-target="#deletesaveModal" [disabled]="!deleteconfirmation" >Delete Employee</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--  save modal-->
+  <div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="width:180px;">
+      <div class="modal-content">
+       
+        <div class="modal-body" style="background-color: aqua;">
+            <p class="text-dark"><strong>saved successfully!</strong>  </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- delete saved modal-->
+<div class="modal fade" id="deletesaveModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" style="width:200px;">
+    <div class="modal-content">
+     
+      <div class="modal-body" style="background-color: aqua;">
+          <p class="text-dark"><strong>Deleted successfully!</strong>  </p>
+      </div>
+    </div>
+  </div>
+</div>
