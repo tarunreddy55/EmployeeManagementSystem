@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj": {}
+    "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj": {
+    "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
+        "projectUniqueName": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
         "projectName": "EmployeeManagementSystem",
-        "projectPath": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\TARUN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\obj\\",
+        "projectPath": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Tarun\\.nuget\\packages\\",
+        "outputPath": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\TARUN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tarun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

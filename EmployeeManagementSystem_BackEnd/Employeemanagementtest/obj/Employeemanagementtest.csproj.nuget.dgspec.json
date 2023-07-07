@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\Employeemanagementtest\\Employeemanagementtest.csproj": {}
+    "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\Employeemanagementtest\\Employeemanagementtest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj": {
+    "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
+        "projectUniqueName": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
         "projectName": "EmployeeManagementSystem",
-        "projectPath": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\TARUN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\obj\\",
+        "projectPath": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Tarun\\.nuget\\packages\\",
+        "outputPath": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\TARUN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tarun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -81,21 +84,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\Employeemanagementtest\\Employeemanagementtest.csproj": {
+    "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\Employeemanagementtest\\Employeemanagementtest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\Employeemanagementtest\\Employeemanagementtest.csproj",
+        "projectUniqueName": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\Employeemanagementtest\\Employeemanagementtest.csproj",
         "projectName": "Employeemanagementtest",
-        "projectPath": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\Employeemanagementtest\\Employeemanagementtest.csproj",
-        "packagesPath": "C:\\Users\\TARUN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\Employeemanagementtest\\obj\\",
+        "projectPath": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\Employeemanagementtest\\Employeemanagementtest.csproj",
+        "packagesPath": "C:\\Users\\Tarun\\.nuget\\packages\\",
+        "outputPath": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\Employeemanagementtest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\TARUN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tarun\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -109,8 +115,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj": {
-                "projectPath": "C:\\Users\\TARUN\\source\\repos\\EmployeeManagementSystem\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj"
+              "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj": {
+                "projectPath": "D:\\EmployeeManagementSystem\\EmployeeManagementSystem_BackEnd\\EmployeeManagementSystem\\EmployeeManagementSystem.csproj"
               }
             }
           }
@@ -177,7 +183,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }
